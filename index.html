@@ -61,7 +61,12 @@
 
       <section class="marquee-band" aria-label="Преимущества">
         <div class="marquee-track">
-          <span>резюме</span><i>✦</i><span>вакансии</span><i>✦</i><span>письма</span><i>✦</i><span>собеседования</span><i>✦</i><span>резюме</span><i>✦</i><span>вакансии</span><i>✦</i><span>письма</span><i>✦</i><span>собеседования</span><i>✦</i>
+          <div class="marquee-group" aria-hidden="true">
+            <span>резюме</span><i>✦</i><span>вакансии</span><i>✦</i><span>письма</span><i>✦</i><span>собеседования</span><i>✦</i><span>резюме</span><i>✦</i><span>вакансии</span><i>✦</i><span>письма</span><i>✦</i><span>собеседования</span><i>✦</i><span>резюме</span><i>✦</i><span>вакансии</span><i>✦</i><span>письма</span><i>✦</i><span>собеседования</span><i>✦</i>
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+            <span>резюме</span><i>✦</i><span>вакансии</span><i>✦</i><span>письма</span><i>✦</i><span>собеседования</span><i>✦</i><span>резюме</span><i>✦</i><span>вакансии</span><i>✦</i><span>письма</span><i>✦</i><span>собеседования</span><i>✦</i><span>резюме</span><i>✦</i><span>вакансии</span><i>✦</i><span>письма</span><i>✦</i><span>собеседования</span><i>✦</i>
+          </div>
         </div>
       </section>
 
@@ -112,7 +117,7 @@
           </article>
           <article class="audience-item">
             <span class="audience-index">C</span>
-            <div><h3>Меняете направление</h3><p>Понять, какие вакансии подходят под ваш опыт сейчас, а не пять лет назад.</p></div>
+            <div><h3>Ищете первую работу</h3><p>Подобрать стажировки и вакансии для старта — без требований «5 лет опыта».</p></div>
             <span class="audience-arrow">↗</span>
           </article>
         </div>
@@ -144,15 +149,10 @@
         <div class="request-heading">
           <p class="eyebrow">первый шаг</p>
           <h2>Расскажите,<br /><em>что ищете.</em></h2>
-          <p>Оставьте контакты — уточним задачу и скажем, подойдёт ли вам пробный запуск.</p>
+          <p>Оставьте почту или Telegram — я напишу, уточню задачу и расскажу о пробном запуске.</p>
         </div>
         <form class="request-form" id="request-form">
-          <label>Как к вам обращаться<input name="name" type="text" autocomplete="name" placeholder="Имя" required /></label>
-          <label>Кем хотите работать<input name="role" type="text" placeholder="Например, Python-разработчик" required /></label>
-          <div class="form-row">
-            <label>Город<input name="city" type="text" placeholder="Москва / удалённо" required /></label>
-            <label>Telegram или телефон<input name="contact" type="text" placeholder="@username или +7…" required /></label>
-          </div>
+          <label>Почта или Telegram<input name="contact" type="text" placeholder="you@example.com или @username" autocomplete="email" required /></label>
           <button class="button button-primary button-submit" type="submit">Получить подборку <span aria-hidden="true">↗</span></button>
           <p class="form-note">Нажимая кнопку, вы соглашаетесь на связь по заявке. Данные не передаём третьим лицам.</p>
           <p class="form-result" id="form-result" role="status" aria-live="polite"></p>

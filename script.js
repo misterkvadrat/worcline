@@ -6,9 +6,6 @@ requestForm?.addEventListener("submit", (event) => {
   const data = new FormData(requestForm);
   const message = [
     "Здравствуйте! Хочу попробовать подбор вакансий на 7 дней.",
-    `Имя: ${data.get("name")}`,
-    `Позиция: ${data.get("role")}`,
-    `Город: ${data.get("city")}`,
     `Контакт: ${data.get("contact")}`,
   ].join("\n");
   const username = typeof TELEGRAM_USERNAME === "string" ? TELEGRAM_USERNAME.replace(/^@/, "") : "";
