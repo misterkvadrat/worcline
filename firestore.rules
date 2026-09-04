@@ -1,0 +1,24 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /leads/{leadId} {
+      allow create: if request.resource.data.keys().hasAll([
+          'contact', 'channel', 'source', 'status', 'createdAt'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'contact', 'channel', 'source', 'status', 'createdAt'
+        ])
+        && request.resource.data.contact is string
+        && request.resource.data.contact.size() >= 5
+        && request.resource.data.contact.size() <= 254
+        && request.resource.data.channel in ['email', 'telegram']
+        && request.resource.data.source is string
+        && request.resource.data.source.size() <= 500
+        && request.resource.data.status == 'Новая'
+        && request.resource.data.createdAt == request.time;
+
+      allow read, update, delete: if false;
+    }
+  }
+}

@@ -1,2 +1,7 @@
-// Use a full URL here only while the site and API are hosted on different domains.
-const LEADS_API_URL = "/api/leads";
+// Firebase web configuration is public by design. Access is protected by firestore.rules.
+const FIREBASE_CONFIG = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  appId: "",
+};
