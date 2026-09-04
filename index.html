@@ -3,166 +3,167 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f4f1ea" />
-    <meta name="description" content="Персональный помощник по поиску работы: подходящие вакансии, фильтр и сопроводительные письма под ваше резюме." />
-    <title>Работа без бесконечного скролла</title>
-    <link rel="stylesheet" href="styles.css?v=20260904-2" />
+    <meta name="theme-color" content="#f7f8fc" />
+    <meta name="description" content="Персональная подборка подходящих вакансий и сопроводительных писем — без бесконечного скролла и случайных откликов." />
+    <title>worcline. — вакансии, которые подходят вам</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kay+Pho+Du:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260904-3" />
     <script defer src="site-config.js"></script>
-    <script defer src="script.js?v=20260904-2"></script>
+    <script defer src="script.js?v=20260904-3"></script>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="На главную">
-        <img class="brand-logo" src="assets/worcline-logo.png" alt="worcline." />
-      </a>
+      <a class="wordmark" href="#top" aria-label="worcline — на главную">worcline.</a>
       <nav class="nav-links" aria-label="Основная навигация">
         <a href="#how">Как работает</a>
         <a href="#for-whom">Для кого</a>
-        <a href="#offer">Старт</a>
+        <a href="#price">Стоимость</a>
       </nav>
-      <a class="button button-small button-outline header-cta" href="#request">Получить подборку</a>
+      <a class="button button-compact button-dark" href="#request">Попробовать</a>
     </header>
 
     <main id="top">
-      <section class="hero section-shell">
+      <section class="hero page-shell">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-dot"></span> поиск работы без перегруза</p>
-          <h1>Меньше пустых откликов.<br /><em>Больше<br />времени</em> на<br />собеседования.</h1>
-          <p class="hero-text">Настроим поиск под ваше резюме, город и зарплату. Вы будете видеть не поток случайных вакансий, а понятную подборку, с которой можно действовать.</p>
+          <p class="status-pill"><span></span> Набор на пробный запуск открыт</p>
+          <h1>Работа ищется.<br /><span>Вы выбираете.</span></h1>
+          <p class="hero-lead">Каждый день — короткая подборка вакансий, которые подходят вашему опыту, городу и ожиданиям по зарплате. Без десятков вкладок и случайных откликов.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#request">Попробовать 7 дней <span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="#how">Посмотреть, как это работает <span aria-hidden="true">↓</span></a>
+            <a class="button button-accent" href="#request">Получить подборку <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#how">Посмотреть процесс <span aria-hidden="true">↓</span></a>
           </div>
-          <div class="hero-proof" aria-label="Условия пробного запуска">
-            <span><strong>10–15</strong> вакансий в день</span>
-            <span><strong>7 дней</strong> тестовый запуск</span>
-            <span><strong>1 профиль</strong> под ваши цели</span>
-          </div>
+          <dl class="hero-facts">
+            <div><dt>7 дней</dt><dd>пробный запуск</dd></div>
+            <div><dt>10–15</dt><dd>вакансий в день</dd></div>
+            <div><dt>Вы решаете</dt><dd>куда откликаться</dd></div>
+          </dl>
         </div>
 
-        <div class="hero-visual" aria-label="Человек ищет работу с ноутбука и телефона">
-          <div class="image-frame">
-            <img src="assets/avito-cover.jpg" alt="Человек просматривает вакансии за ноутбуком" />
-            <div class="image-shade"></div>
+        <div class="product-preview" aria-label="Пример ежедневной подборки вакансий">
+          <div class="preview-glow"></div>
+          <div class="preview-window">
+            <div class="preview-bar">
+              <div class="preview-title"><span class="preview-mark">W.</span><span>Подборка на сегодня</span></div>
+              <span class="preview-date">12 сентября</span>
+            </div>
+            <div class="preview-summary">
+              <div><strong>12</strong><span>подходят</span></div>
+              <p>Москва · удалённо<br />от 160 000 ₽</p>
+              <span class="ready-badge">Готово</span>
+            </div>
+            <div class="vacancy-list">
+              <article class="vacancy-card vacancy-card-featured">
+                <div class="company-avatar">S</div>
+                <div class="vacancy-copy">
+                  <span class="match-label">Совпадение 94%</span>
+                  <h2>Продуктовый дизайнер</h2>
+                  <p>Softline · удалённо</p>
+                </div>
+                <strong class="salary">180–230К</strong>
+              </article>
+              <article class="vacancy-card">
+                <div class="company-avatar avatar-blue">P</div>
+                <div class="vacancy-copy">
+                  <span class="match-label">Совпадение 89%</span>
+                  <h2>UX/UI дизайнер</h2>
+                  <p>Practicum · гибрид</p>
+                </div>
+                <strong class="salary">от 170К</strong>
+              </article>
+              <article class="vacancy-card vacancy-card-muted">
+                <div class="company-avatar avatar-violet">Y</div>
+                <div class="vacancy-copy">
+                  <span class="match-label">Совпадение 86%</span>
+                  <h2>Senior web designer</h2>
+                  <p>Yadro · удалённо</p>
+                </div>
+                <strong class="salary">по итогам</strong>
+              </article>
+            </div>
+            <div class="preview-footer"><span><i></i> Письма подготовлены</span><span>3 из 12</span></div>
           </div>
-          <div class="floating-card floating-card-top">
-            <span class="status-dot"></span>
-            <span>Подборка готова</span>
-            <strong>12 вакансий</strong>
-          </div>
-          <div class="floating-card floating-card-bottom">
-            <span class="mini-icon">✦</span>
-            <span>Письмо под вакансию</span>
-          </div>
-          <span class="visual-stamp">спокойный<br />поиск</span>
+          <div class="preview-note note-top">Только свежие вакансии</div>
+          <div class="preview-note note-bottom"><span>✓</span> Уже отфильтровано</div>
         </div>
       </section>
 
-      <section class="marquee-band" aria-label="Преимущества">
-        <div class="marquee-track">
-          <div class="marquee-group" aria-hidden="true">
-            <span>резюме</span><i>✦</i><span>вакансии</span><i>✦</i><span>письма</span><i>✦</i><span>собеседования</span><i>✦</i><span>резюме</span><i>✦</i><span>вакансии</span><i>✦</i><span>письма</span><i>✦</i><span>собеседования</span><i>✦</i><span>резюме</span><i>✦</i><span>вакансии</span><i>✦</i><span>письма</span><i>✦</i><span>собеседования</span><i>✦</i>
-          </div>
-          <div class="marquee-group" aria-hidden="true">
-            <span>резюме</span><i>✦</i><span>вакансии</span><i>✦</i><span>письма</span><i>✦</i><span>собеседования</span><i>✦</i><span>резюме</span><i>✦</i><span>вакансии</span><i>✦</i><span>письма</span><i>✦</i><span>собеседования</span><i>✦</i><span>резюме</span><i>✦</i><span>вакансии</span><i>✦</i><span>письма</span><i>✦</i><span>собеседования</span><i>✦</i>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-shell section-block" id="how">
-        <div class="section-intro">
-          <p class="eyebrow">как это устроено</p>
-          <h2>Поиск работы<br /><em>становится понятным.</em></h2>
-          <p>Не нужно каждый вечер начинать с нуля. Один раз задаём направление — дальше вы получаете только то, что стоит открыть.</p>
-        </div>
-        <div class="steps-grid">
-          <article class="step-card step-card-dark">
-            <span class="step-number">01</span>
-            <div class="step-icon">◎</div>
-            <h3>Рассказываете о цели</h3>
-            <p>Профессия, опыт, зарплата, город и формат работы. Чем точнее вводные, тем полезнее подборка.</p>
-          </article>
-          <article class="step-card">
-            <span class="step-number">02</span>
-            <div class="step-icon">⌁</div>
-            <h3>Получаете подходящие варианты</h3>
-            <p>Вакансии проходят первичную проверку по вашему профилю. К каждой подходящей — готовое письмо.</p>
-          </article>
-          <article class="step-card step-card-lime">
-            <span class="step-number">03</span>
-            <div class="step-icon">↗</div>
-            <h3>Решаете, куда откликаться</h3>
-            <p>Никаких откликов вслепую. Вы сами выбираете вакансии и сохраняете контроль над поиском.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="split-section section-shell" id="for-whom">
-        <div class="split-heading">
-          <p class="eyebrow">в нужный момент</p>
-          <h2>Когда нужна<br /><em>опора.</em></h2>
-          <p>Сервис помогает не потеряться, когда поиск работы стал отдельной работой.</p>
-        </div>
-        <div class="audience-list">
-          <a class="audience-item" href="#request">
-            <span class="audience-index">A</span>
-            <div><h3>После увольнения</h3><p>Вернуться в ритм и не тратить первые недели на хаотичный просмотр ленты.</p></div>
-            <span class="audience-arrow">↗</span>
-          </a>
-          <a class="audience-item" href="#request">
-            <span class="audience-index">B</span>
-            <div><h3>Пора сменить работу</h3><p>Сравнить рынок, увидеть сильные варианты и спокойно выбрать следующий шаг.</p></div>
-            <span class="audience-arrow">↗</span>
-          </a>
-          <a class="audience-item" href="#request">
-            <span class="audience-index">C</span>
-            <div><h3>Поиск работы для студента</h3><p>Подобрать стажировки и вакансии для старта — без требований «5 лет опыта».</p></div>
-            <span class="audience-arrow">↗</span>
-          </a>
-        </div>
-      </section>
-
-      <section class="offer-section section-shell" id="offer">
-        <div class="offer-card">
-          <div class="offer-copy">
-            <p class="eyebrow eyebrow-light">стартовый запуск</p>
-            <h2>Сделайте поиск<br /><em>чуть легче уже сегодня.</em></h2>
-            <p>За 7 дней вы поймёте, какие вакансии действительно подходят, какие письма работают лучше и где не стоит тратить время.</p>
-            <ul class="check-list">
-              <li><span>✓</span> настройка под ваше резюме</li>
-              <li><span>✓</span> ежедневная подборка вакансий</li>
-              <li><span>✓</span> сопроводительные письма</li>
-              <li><span>✓</span> отчёт и рекомендации в Telegram</li>
-            </ul>
-          </div>
-          <div class="offer-price">
-            <span class="price-label">пробный запуск</span>
-            <strong>1 490 ₽</strong>
-            <span>7 дней · один профиль</span>
-            <a class="button button-light" href="#request">Начать <span aria-hidden="true">↗</span></a>
+      <section class="brand-screen" aria-labelledby="brand-heading">
+        <div class="brand-screen-inner page-shell">
+          <div class="brand-art" aria-hidden="true"><img src="assets/worcline-logo.png" alt="" /></div>
+          <div class="brand-statement">
+            <p class="section-kicker">Меньше шума</p>
+            <h2 id="brand-heading">Не ещё один сайт с вакансиями.<br /><span>Фильтр между вами и рынком.</span></h2>
+            <p>worcline. собирает подходящие варианты в одну понятную ленту. Вы не ищете иголку в стоге — вы смотрите то, что уже прошло первичный отбор.</p>
           </div>
         </div>
       </section>
 
-      <section class="request-section section-shell" id="request">
-        <div class="request-heading">
-          <p class="eyebrow">первый шаг</p>
-          <h2>Расскажите,<br /><em>что ищете.</em></h2>
-          <p>Оставьте почту или Telegram — я напишу, уточню задачу и расскажу о пробном запуске.</p>
+      <section class="process page-shell" id="how">
+        <div class="section-heading">
+          <p class="section-kicker">Как это работает</p>
+          <h2>Один раз настраиваем.<br /><span>Дальше — только выбор.</span></h2>
         </div>
-        <form class="request-form" id="request-form">
-          <label>Почта или Telegram<input name="contact" type="text" placeholder="you@example.com или @username" autocomplete="email" required /></label>
-          <button class="button button-primary button-submit" type="submit">Получить подборку <span aria-hidden="true">↗</span></button>
-          <p class="form-note">Нажимая кнопку, вы соглашаетесь на связь по заявке. Данные не передаём третьим лицам.</p>
+        <ol class="process-list">
+          <li><span class="process-number">01</span><div class="process-icon" aria-hidden="true">⌁</div><h3>Расскажите, что ищете</h3><p>Опыт, роль, город, формат работы и желаемая зарплата. Можно начать с готового резюме.</p></li>
+          <li><span class="process-number">02</span><div class="process-icon" aria-hidden="true">◎</div><h3>Получайте короткую подборку</h3><p>Каждый вариант проверяется по вашим условиям. К подходящим вакансиям готовим сопроводительные письма.</p></li>
+          <li><span class="process-number">03</span><div class="process-icon" aria-hidden="true">↗</div><h3>Откликайтесь осознанно</h3><p>Никакой отправки вслепую. Вы видите результат, выбираете лучшие варианты и сохраняете контроль.</p></li>
+        </ol>
+      </section>
+
+      <section class="audience" id="for-whom">
+        <div class="page-shell audience-layout">
+          <div class="audience-heading">
+            <p class="section-kicker">Когда особенно полезно</p>
+            <h2>Поиск уже отнимает больше сил, чем сама работа.</h2>
+            <p>Выберите свою ситуацию — каждая карточка приведёт к заявке.</p>
+          </div>
+          <div class="audience-cards">
+            <a href="#request"><span>A</span><div><h3>После увольнения</h3><p>Вернуться в ритм без паники и хаотичного просмотра ленты.</p></div><i aria-hidden="true">↗</i></a>
+            <a href="#request"><span>B</span><div><h3>При смене работы</h3><p>Спокойно изучить рынок, пока вы ещё работаете.</p></div><i aria-hidden="true">↗</i></a>
+            <a href="#request"><span>C</span><div><h3>Для студента</h3><p>Найти стажировки и стартовые роли без требований «5 лет опыта».</p></div><i aria-hidden="true">↗</i></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="offer page-shell" id="price">
+        <div class="offer-main">
+          <p class="section-kicker section-kicker-light">Пробный запуск</p>
+          <h2>Неделя, чтобы понять:<br /><span>так искать легче.</span></h2>
+          <p>Настроим профиль, соберём первые подборки и посмотрим, какие вакансии действительно заслуживают вашего времени.</p>
+          <ul>
+            <li><span>✓</span> настройка под резюме и цели</li><li><span>✓</span> ежедневные подборки</li><li><span>✓</span> сопроводительные письма</li><li><span>✓</span> связь в Telegram</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <p>Один профиль · 7 дней</p><strong>1 490 ₽</strong><span>Без подписки и автопродления</span>
+          <a class="button button-accent" href="#request">Начать пробный запуск <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="request page-shell" id="request">
+        <div class="request-copy">
+          <p class="section-kicker">Первый шаг</p>
+          <h2>Пусть следующая подходящая вакансия найдёт вас.</h2>
+          <p>Оставьте почту или Telegram. Я напишу, уточню задачу и расскажу, как пройдёт пробная неделя.</p>
+        </div>
+        <form class="request-form" id="request-form" novalidate>
+          <label for="contact">Почта или Telegram</label>
+          <div class="input-row">
+            <input id="contact" name="contact" type="text" placeholder="you@example.com или @username" autocomplete="email" aria-describedby="form-note form-result" required />
+            <button class="button button-dark" type="submit">Связаться <span aria-hidden="true">↗</span></button>
+          </div>
+          <p class="form-note" id="form-note">Перейдёте в Telegram — останется только нажать «Отправить».</p>
           <p class="form-result" id="form-result" role="status" aria-live="polite"></p>
         </form>
       </section>
     </main>
 
-    <footer class="site-footer section-shell">
-      <a class="brand" href="#top"><img class="brand-logo" src="assets/worcline-logo.png" alt="worcline." /></a>
-      <p>Помощь в поиске работы без лишнего шума.<span class="footer-credit">Оригинальный hh-ai-agent · разработчик <a href="https://github.com/fikstt2/hh-ai-agent" target="_blank" rel="noreferrer">fikstt2</a>.</span></p>
-      <a href="#request">Получить подборку ↗</a>
+    <footer class="site-footer page-shell">
+      <a class="wordmark footer-wordmark" href="#top">worcline.</a>
+      <p>Помощь в поиске работы без лишнего шума.</p>
+      <p class="developer-credit">Основано на hh-ai-agent · <a href="https://github.com/fikstt2/hh-ai-agent" target="_blank" rel="noreferrer">fikstt2</a></p>
     </footer>
   </body>
 </html>
