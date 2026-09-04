@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&family=Unbounded:wght@600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260904-6" />
+    <link rel="stylesheet" href="styles.css?v=20260904-7" />
     <script defer src="https://www.gstatic.com/firebasejs/12.18.0/firebase-app-compat.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore-compat.js"></script>
     <script defer src="site-config.js?v=20260904-6"></script>
@@ -73,22 +73,46 @@
         <div class="page-shell flow-strip-inner"><span>Ваши критерии</span><i aria-hidden="true">→</i><span>Проверка вакансий</span><i aria-hidden="true">→</i><span>Короткая подборка</span><i aria-hidden="true">→</i><strong>Ваш выбор</strong></div>
       </section>
 
-      <section class="brand-story page-shell" aria-labelledby="brand-title">
-        <div class="brand-lockup"><img src="assets/worcline-logo.png" alt="worcline." /></div>
-        <div class="brand-copy">
-          <p class="section-label">Меньше шума</p>
-          <h2 id="brand-title">Не ещё одна лента вакансий. <span>Персональный фильтр между вами и рынком.</span></h2>
-          <p>Вам не нужно каждый вечер начинать с нуля. worcline. отсеивает неподходящее и оставляет только варианты, которые заслуживают внимания.</p>
+      <section class="filter-story page-shell" aria-labelledby="filter-title">
+        <div class="filter-copy">
+          <p class="section-label">Не больше. Точнее.</p>
+          <h2 id="filter-title">Рынок большой.<br /><span>Ваш список — нет.</span></h2>
+          <p>Каждый день десятки новых вакансий проходят один и тот же фильтр: ваши условия, опыт и ожидания. До вас доходит только короткий результат.</p>
+        </div>
+        <div class="filter-board" aria-label="Пример отбора: из 47 вакансий 3 попали в подборку">
+          <div class="filter-board-head"><span>Отбор на сегодня</span><span>Обновлено 09:30</span></div>
+          <div class="filter-stages">
+            <div class="filter-stage filter-stage-market"><span>47</span><div><strong>Новые вакансии</strong><small>весь рынок по вашему запросу</small></div><i>100%</i></div>
+            <div class="filter-stage filter-stage-match"><span>12</span><div><strong>Совпали с условиями</strong><small>город, формат, зарплата и опыт</small></div><i>26%</i></div>
+            <div class="filter-stage filter-stage-shortlist"><span>3</span><div><strong>Стоят внимания</strong><small>готовы для вашей подборки</small></div><i>6%</i></div>
+          </div>
+          <div class="filter-board-foot"><span><i></i> Лишнее осталось за пределами списка</span><strong>Вы видите главное</strong></div>
         </div>
       </section>
 
       <section class="process-section" id="how" aria-labelledby="process-title">
-        <div class="page-shell">
-          <div class="section-intro"><p class="section-label">Один раз настроить</p><h2 id="process-title">Поиск продолжится,<br />даже когда вы закроете ноутбук.</h2></div>
-          <ol class="process-track">
-            <li><span class="step-index">01</span><div class="step-icon" aria-hidden="true">⌁</div><div><h3>Задаём направление</h3><p>Роль, опыт, город, формат и зарплата. Можно начать с готового резюме.</p></div></li>
-            <li><span class="step-index">02</span><div class="step-icon" aria-hidden="true">◎</div><div><h3>Фильтруем рынок</h3><p>Каждая вакансия сверяется с вашими условиями. Случайные варианты не попадают в подборку.</p></div></li>
-            <li><span class="step-index">03</span><div class="step-icon" aria-hidden="true">↗</div><div><h3>Вы выбираете</h3><p>Получаете короткий список и сопроводительные письма. Никакой отправки откликов вслепую.</p></div></li>
+        <div class="process-layout page-shell">
+          <div class="process-summary">
+            <p class="section-label">Спокойный ритм</p>
+            <h2 id="process-title">Вы задаёте курс.<br /><span>Рутину забирает worcline.</span></h2>
+            <p>Не нужно возвращаться к поиску каждый свободный час. У каждого действия есть своё место и время.</p>
+          </div>
+          <ol class="process-schedule">
+            <li>
+              <span class="schedule-time">Один раз</span>
+              <div class="schedule-marker"><i></i></div>
+              <div class="schedule-copy"><span>Настройка</span><h3>Показываете, что вам подходит</h3><p>Резюме, роль, город, формат работы и желаемая зарплата.</p></div>
+            </li>
+            <li>
+              <span class="schedule-time">Каждый день</span>
+              <div class="schedule-marker"><i></i></div>
+              <div class="schedule-copy"><span>Фильтрация</span><h3>Получаете только совпадения</h3><p>Вместо общей ленты — короткая подборка с понятной причиной выбора.</p></div>
+            </li>
+            <li>
+              <span class="schedule-time">Когда удобно</span>
+              <div class="schedule-marker"><i></i></div>
+              <div class="schedule-copy"><span>Решение</span><h3>Выбираете без спешки</h3><p>Откликаетесь только туда, куда хотите. Сопроводительное уже подготовлено.</p></div>
+            </li>
           </ol>
         </div>
       </section>
