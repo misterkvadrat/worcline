@@ -32,12 +32,12 @@ button, input { font: inherit; }
 .button-small { min-height: 40px; padding-inline: 16px; font-size: .8rem; }
 .button-light { color: var(--dark); background: var(--lime); }
 
-.hero { min-height: 650px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(380px, .86fr); gap: 8vw; align-items: center; padding-block: 74px 90px; }
+.hero { min-height: 650px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(380px, .86fr); gap: clamp(56px, 5vw, 76px); align-items: center; padding-block: 74px 90px; }
 .eyebrow { margin: 0 0 23px; color: #637062; text-transform: uppercase; letter-spacing: .16em; font-size: .69rem; font-weight: 800; }
 .eyebrow-dot { width: 7px; height: 7px; display: inline-block; margin-right: 8px; background: #99bd25; border-radius: 50%; vertical-align: 1px; }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2 { letter-spacing: -.065em; line-height: .98; }
-h1 { max-width: 700px; margin-bottom: 28px; font-size: clamp(3.45rem, 6.7vw, 6.35rem); font-weight: 800; }
+h1 { max-width: 620px; margin-bottom: 28px; font-size: clamp(3.1rem, 5.2vw, 5rem); font-weight: 800; }
 h1 em, h2 em { color: #5e7610; font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
 .hero-text { max-width: 540px; margin-bottom: 30px; color: var(--muted); font-size: 1.08rem; }
 .hero-actions { display: flex; align-items: center; gap: 25px; flex-wrap: wrap; }
@@ -65,10 +65,11 @@ h1 em, h2 em { color: #5e7610; font-family: Georgia, "Times New Roman", serif; f
 @keyframes drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
 
 .section-block { padding-block: 135px; }
-.section-intro { display: grid; grid-template-columns: 1fr 1.4fr; column-gap: 40px; align-items: end; margin-bottom: 58px; }
-.section-intro .eyebrow { grid-row: span 2; align-self: start; }
-h2 { margin-bottom: 20px; font-size: clamp(2.8rem, 5vw, 5rem); font-weight: 800; }
-.section-intro > p:last-child { max-width: 400px; margin-bottom: 0; color: var(--muted); font-size: 1rem; }
+.section-intro { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); column-gap: clamp(28px, 5vw, 72px); row-gap: 24px; align-items: end; margin-bottom: 58px; }
+.section-intro .eyebrow { grid-column: 1 / -1; grid-row: auto; align-self: start; margin-bottom: 0; }
+.section-intro h2 { grid-column: 1; margin-bottom: 0; }
+h2 { margin-bottom: 20px; font-size: clamp(2.6rem, 4.5vw, 4.65rem); font-weight: 800; }
+.section-intro > p:last-child { grid-column: 2; align-self: end; max-width: 400px; margin-bottom: 0; padding-bottom: 8px; color: var(--muted); font-size: 1rem; }
 .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .step-card { min-height: 330px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; background: var(--paper-deep); border-radius: 18px; }
 .step-card-dark { color: var(--paper); background: var(--dark); }
@@ -129,7 +130,8 @@ h2 { margin-bottom: 20px; font-size: clamp(2.8rem, 5vw, 5rem); font-weight: 800;
   .hero-visual { min-height: 470px; max-width: 600px; width: 100%; margin-inline: auto; }
   .image-frame { left: 24px; }
   .section-intro, .split-section, .request-section { grid-template-columns: 1fr; gap: 40px; }
-  .section-intro .eyebrow { grid-row: auto; }
+  .section-intro .eyebrow, .section-intro h2, .section-intro > p:last-child { grid-column: auto; }
+  .section-intro > p:last-child { padding-bottom: 0; }
   .section-block { padding-block: 90px; }
   .steps-grid { grid-template-columns: 1fr; }
   .step-card { min-height: 270px; }
@@ -139,6 +141,13 @@ h2 { margin-bottom: 20px; font-size: clamp(2.8rem, 5vw, 5rem); font-weight: 800;
   .offer-price { align-self: start; }
   .request-section { padding-bottom: 100px; }
   .site-footer { grid-template-columns: 1fr; gap: 8px; padding-block: 28px; }
+}
+
+@media (min-width: 851px) and (max-width: 1150px) {
+  .hero { grid-template-columns: minmax(0, 1fr) minmax(300px, .84fr); gap: 5vw; }
+  h1 { max-width: 560px; font-size: clamp(3rem, 5.1vw, 4.9rem); }
+  .hero-text { max-width: 480px; }
+  .hero-visual { min-height: 470px; }
 }
 
 @media (max-width: 500px) {
