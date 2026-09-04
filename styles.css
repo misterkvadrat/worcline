@@ -116,6 +116,8 @@ h2 { margin-bottom: 20px; font-size: clamp(2.8rem, 5vw, 5rem); font-weight: 800;
 
 .site-footer { display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 22px; min-height: 110px; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
 .site-footer p { margin: 0; }
+.footer-credit { display: block; margin-top: 6px; color: #929992; font-size: .7rem; }
+.footer-credit a { text-decoration: underline; text-underline-offset: 2px; }
 .site-footer > a:last-child { color: var(--ink); font-weight: 750; }
 
 @media (max-width: 850px) {
