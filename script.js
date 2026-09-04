@@ -3,11 +3,7 @@ const formResult = document.querySelector("#form-result");
 
 requestForm?.addEventListener("submit", (event) => {
   event.preventDefault();
-  const data = new FormData(requestForm);
-  const message = [
-    "Здравствуйте! Хочу попробовать подбор вакансий на 7 дней.",
-    `Контакт: ${data.get("contact")}`,
-  ].join("\n");
+  const message = "Здравствуйте! Хочу попробовать подбор вакансий на 7 дней.";
   const username = typeof TELEGRAM_USERNAME === "string" ? TELEGRAM_USERNAME.replace(/^@/, "") : "";
   const target = username
     ? `https://t.me/${username}?text=${encodeURIComponent(message)}`
