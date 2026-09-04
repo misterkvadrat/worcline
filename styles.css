@@ -143,12 +143,14 @@ h1 span, .section-heading h2 span, .offer-main h2 span { color: var(--blue); }
 .request-copy h2 { font-size: clamp(2.8rem, 4.7vw, 4.8rem); }
 .request-copy > p:last-child { max-width: 470px; margin-bottom: 0; color: var(--ink-soft); font-size: .9rem; line-height: 1.65; }
 .request-form { min-width: 0; padding: 30px; background: white; border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 20px 55px rgba(34, 48, 89, .08); }
+.form-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .request-form label { display: block; margin-bottom: 9px; color: var(--ink-soft); font-size: .7rem; font-weight: 780; }
 .input-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
 .request-form input { width: 100%; min-width: 0; min-height: 52px; padding: 0 15px; color: var(--ink); background: var(--canvas); border: 1px solid var(--line); border-radius: 11px; outline: none; }
 .request-form input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(84, 104, 255, .12); }
 .request-form input[aria-invalid="true"] { border-color: #d84f5f; box-shadow: 0 0 0 3px rgba(216, 79, 95, .1); }
 .request-form input::placeholder { color: #9aa3b2; }
+.request-form button:disabled { cursor: wait; opacity: .72; transform: none; box-shadow: none; }
 .form-note, .form-result { font-size: .68rem; }
 .form-note { margin: 12px 0 0; color: #8b94a4; }
 .form-result { min-height: 20px; margin: 8px 0 0; color: var(--blue-deep); font-weight: 750; }

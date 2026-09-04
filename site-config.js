@@ -1,3 +1,2 @@
-// Set your public Telegram username before publishing, without the @ symbol.
-// Example: const TELEGRAM_USERNAME = "my_username";
-const TELEGRAM_USERNAME = "whothefckisthatguy";
+// Use a full URL here only while the site and API are hosted on different domains.
+const LEADS_API_URL = "/api/leads";

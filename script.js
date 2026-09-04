@@ -1,35 +1,54 @@
 const requestForm = document.querySelector("#request-form");
 const formResult = document.querySelector("#form-result");
 const contactInput = document.querySelector("#contact");
+const submitButton = requestForm?.querySelector('button[type="submit"]');
 
-requestForm?.addEventListener("submit", (event) => {
+requestForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const contact = contactInput?.value.trim();
 
   if (!contact) {
+    showFormResult("Укажите почту или Telegram.", true);
     contactInput?.setAttribute("aria-invalid", "true");
-    formResult.classList.add("error");
-    formResult.textContent = "Укажите почту или Telegram.";
     contactInput?.focus();
     return;
   }
 
   contactInput.removeAttribute("aria-invalid");
-  formResult.classList.remove("error");
-  const message = "Здравствуйте! Хочу попробовать подбор вакансий на 7 дней.";
-  const username = typeof TELEGRAM_USERNAME === "string" ? TELEGRAM_USERNAME.replace(/^@/, "") : "";
-  const target = username
-    ? `https://t.me/${username}?text=${encodeURIComponent(message)}`
-    : `https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(message)}`;
+  showFormResult("Сохраняю заявку…");
+  submitButton.disabled = true;
+  submitButton.setAttribute("aria-busy", "true");
 
-  window.open(target, "_blank", "noopener,noreferrer");
-  formResult.textContent = username
-    ? "Заявка подготовлена в Telegram. Нажмите «Отправить»."
-    : "Заявка подготовлена. Добавьте Telegram username в site-config.js перед публикацией.";
+  try {
+    const response = await fetch(LEADS_API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contact,
+        website: requestForm.elements.website.value,
+        source: window.location.href,
+      }),
+    });
+    const result = await response.json().catch(() => ({}));
+
+    if (!response.ok) throw new Error(result.message || "Не удалось сохранить заявку.");
+
+    requestForm.reset();
+    showFormResult(result.message || "Заявка принята. Я свяжусь с вами сам.");
+  } catch (error) {
+    showFormResult(error.message || "Не удалось сохранить заявку. Попробуйте ещё раз.", true);
+  } finally {
+    submitButton.disabled = false;
+    submitButton.removeAttribute("aria-busy");
+  }
 });
 
 contactInput?.addEventListener("input", () => {
   contactInput.removeAttribute("aria-invalid");
-  formResult.classList.remove("error");
-  formResult.textContent = "";
+  showFormResult("");
 });
+
+function showFormResult(message, isError = false) {
+  formResult.textContent = message;
+  formResult.classList.toggle("error", isError);
+}

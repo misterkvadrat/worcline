@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Kay+Pho+Du:wght@600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css?v=20260904-3" />
-    <script defer src="site-config.js"></script>
-    <script defer src="script.js?v=20260904-3"></script>
+    <script defer src="site-config.js?v=20260904-4"></script>
+    <script defer src="script.js?v=20260904-4"></script>
   </head>
   <body>
     <header class="site-header">
@@ -146,15 +146,19 @@
         <div class="request-copy">
           <p class="section-kicker">Первый шаг</p>
           <h2>Пусть следующая подходящая вакансия найдёт вас.</h2>
-          <p>Оставьте почту или Telegram. Я напишу, уточню задачу и расскажу, как пройдёт пробная неделя.</p>
+          <p>Оставьте почту или Telegram. Я сам напишу, уточню задачу и расскажу, как пройдёт пробная неделя.</p>
         </div>
         <form class="request-form" id="request-form" novalidate>
+          <div class="form-trap" aria-hidden="true">
+            <label for="website">Сайт</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
           <label for="contact">Почта или Telegram</label>
           <div class="input-row">
             <input id="contact" name="contact" type="text" placeholder="you@example.com или @username" autocomplete="email" aria-describedby="form-note form-result" required />
-            <button class="button button-dark" type="submit">Связаться <span aria-hidden="true">↗</span></button>
+            <button class="button button-dark" type="submit">Оставить заявку <span aria-hidden="true">↗</span></button>
           </div>
-          <p class="form-note" id="form-note">Перейдёте в Telegram — останется только нажать «Отправить».</p>
+          <p class="form-note" id="form-note">Контакт сохранится в закрытой таблице. Первым напишу я.</p>
           <p class="form-result" id="form-result" role="status" aria-live="polite"></p>
         </form>
       </section>
