@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260905-3" />
+    <link rel="stylesheet" href="styles.css?v=20260905-4" />
     <script defer src="https://www.gstatic.com/firebasejs/12.18.0/firebase-app-compat.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore-compat.js"></script>
     <script defer src="site-config.js?v=20260904-6"></script>
@@ -75,12 +75,9 @@
             <p class="path">~/worcline/results</p>
             <h2 id="output-title"><span>47 входящих.</span><br />3 достойных внимания.</h2>
             <p>Каждая вакансия проходит через ваши условия. Лишнее остаётся в логе, подходящее — перед вами.</p>
-            <pre class="signal-art" aria-hidden="true"> incoming                  ready
-  47  ────────────────╮      03
-                      │      │
-  ████████████████████╞══════╡███
-                      │      │
-  noise ──────────────╯      match</pre>
+            <pre class="signal-art" aria-hidden="true"><span class="cyan">47 incoming</span> ─────────────┐
+███████████████████──────┤ <span class="success">03 ready</span>
+<span class="dim">44 skipped</span> ──────────────┘</pre>
           </div>
 
           <div class="vacancy-output" aria-label="Пример готовой подборки">
@@ -167,13 +164,14 @@
       </section>
 
       <section class="request-section page-shell" id="request" aria-labelledby="request-title">
-        <div class="request-ascii" aria-hidden="true"><pre><span class="success">visitor@worcline</span><span class="dim">:</span><span class="cyan">~/apply</span><span class="prompt">$</span> request-contact
-
-<span class="ascii-bright">+--------------------[ CONTACT ]--------------------+</span>
+        <div class="request-ascii" aria-hidden="true">
+          <div class="request-ascii-command"><span class="success">visitor@worcline</span><span class="dim">:</span><span class="cyan">~/apply</span><span class="prompt">$</span> request-contact</div>
+          <pre><span class="ascii-bright">+--------------------[ CONTACT ]--------------------+</span>
 |  stdin  <span class="prompt">-&gt;</span>  validate  <span class="purple">-&gt;</span>  secure_store  <span class="success">-&gt;</span>  owner  |
 <span class="ascii-bright">+-------------------------+-------------------------+</span>
                           |
-                          <span class="prompt">v</span></pre></div>
+                          <span class="prompt">v</span></pre>
+        </div>
         <div class="request-grid">
           <div class="request-copy">
             <p class="section-command"><span class="shell-user">visitor@worcline</span><span class="dim">:</span><span class="shell-path">~/apply</span><span class="prompt">$</span>&nbsp;worcline start</p>

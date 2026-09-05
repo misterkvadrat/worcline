@@ -102,7 +102,7 @@ pre { margin: 0; font: inherit; }
 .output-copy h2 { font-size: clamp(38px, 4.5vw, 62px); }
 .output-copy h2 span { color: var(--cyan); }
 .output-copy > p:not(.path) { max-width: 610px; margin: 26px 0 0; color: #9299a3; }
-.signal-art { overflow: hidden; margin-top: 45px; color: var(--dim); font-size: clamp(7px, .8vw, 10px); line-height: 1.35; white-space: pre; }
+.signal-art { overflow: hidden; margin-top: 34px; color: var(--text); font-size: clamp(8px, .86vw, 11px); line-height: 1.45; white-space: pre; }
 .vacancy-row { display: grid; grid-template-columns: 42px minmax(0,1fr) auto; align-items: center; min-height: 112px; padding: 18px; gap: 18px; border-bottom: 1px solid var(--line); transition: background 150ms ease; }
 .vacancy-row:hover { background: var(--panel); }
 .vacancy-row--best { border-left: 2px solid var(--green); background: rgba(120,219,169,.035); }
@@ -152,7 +152,8 @@ pre { margin: 0; font: inherit; }
 .cli-button--wide { width: 100%; margin-top: 54px; justify-content: center; }
 
 .request-section { padding-bottom: 130px; }
-.request-ascii { display: flex; justify-content: center; min-height: 178px; margin-bottom: 42px; color: var(--text); font-size: clamp(10px, 1vw, 13px); font-weight: 500; line-height: 1.42; text-align: left; }
+.request-ascii { display: grid; min-height: 154px; margin-bottom: 34px; color: var(--text); font-size: clamp(10px, 1vw, 13px); font-weight: 500; line-height: 1.42; }
+.request-ascii-command { justify-self: end; margin-bottom: 12px; white-space: nowrap; }
 .request-ascii pre { width: max-content; max-width: 100%; margin: 0 auto; white-space: pre; }
 .request-ascii .ascii-bright { color: var(--cyan); text-shadow: 0 0 14px rgba(130,230,243,.18); }
 .request-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 90px; }
@@ -231,7 +232,8 @@ pre { margin: 0; font: inherit; }
   .scenario-menu h3 { font-size: 16px; }
   .price-grid { grid-template-columns: 1fr; margin-top: 50px; gap: 44px; }
   .price-grid h2 { font-size: clamp(50px, 16vw, 74px); }
-  .request-ascii { min-height: 128px; margin-bottom: 24px; font-size: clamp(5.4px, 1.85vw, 8px); line-height: 1.35; }
+  .request-ascii { min-height: 112px; margin-bottom: 20px; font-size: clamp(5.4px, 1.85vw, 8px); line-height: 1.35; }
+  .request-ascii-command { margin-bottom: 9px; }
   .request-grid { gap: 46px; }
   .request-form { padding: 20px 14px; box-shadow: 6px 6px 0 #030405; }
   .input-row { grid-template-columns: 22px minmax(0,1fr); }
