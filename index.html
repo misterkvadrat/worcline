@@ -3,165 +3,190 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#243dff" />
+    <meta name="theme-color" content="#08090b" />
     <meta name="description" content="worcline. отбирает подходящие вакансии и готовит сопроводительные письма — вам остаётся выбрать." />
-    <title>worcline. — меньше поиска, больше подходящих вакансий</title>
+    <title>worcline. — поиск работы в фоновом режиме</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Unbounded:wght@300;500;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260905-1" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260905-2" />
     <script defer src="https://www.gstatic.com/firebasejs/12.18.0/firebase-app-compat.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore-compat.js"></script>
     <script defer src="site-config.js?v=20260904-6"></script>
     <script defer src="script.js?v=20260904-6"></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="header-inner page-shell">
-        <a class="wordmark" href="#top" aria-label="worcline — в начало страницы">
-          <svg class="wordmark-symbol" viewBox="0 0 46 46" aria-hidden="true">
-            <circle cx="23" cy="23" r="22" fill="currentColor" opacity=".14" />
-            <path d="M9 18.5 15.5 32 23 12l6 15 7-19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-            <circle cx="35" cy="32" r="3.1" fill="currentColor" />
-          </svg>
-          <span>worcline.</span>
-        </a>
-        <nav class="nav-links" aria-label="Основная навигация">
-          <a href="#how">Как работает</a>
-          <a href="#for-whom">Для кого</a>
-          <a href="#price">1 490 ₽</a>
+    <a class="skip-link" href="#main">К содержанию</a>
+
+    <header class="terminal-header">
+      <div class="terminal-header__inner page-shell">
+        <a class="cli-brand" href="#top" aria-label="worcline — в начало страницы"><span class="prompt">~/</span>worcline<span class="dot">.</span></a>
+        <nav class="cli-nav" aria-label="Основная навигация">
+          <a href="#how">./как_работает</a>
+          <a href="#for-whom">./для_кого</a>
+          <a href="#price">./цена</a>
         </nav>
-        <a class="button button-header" href="#request">Оставить контакт <span aria-hidden="true">↘</span></a>
+        <a class="header-command" href="#request"><span>$</span> начать</a>
       </div>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-grid page-shell">
+    <main id="main">
+      <section class="hero page-shell" id="top" aria-labelledby="hero-title">
+        <div class="session-line"><span class="dim">session:</span> job-search <span class="dim">/ status:</span> <span class="success">online</span><span class="cursor" aria-hidden="true">_</span></div>
+
+        <pre class="ascii-logo" aria-hidden="true">██╗    ██╗ ██████╗ ██████╗  ██████╗██╗     ██╗███╗   ██╗███████╗
+██║    ██║██╔═══██╗██╔══██╗██╔════╝██║     ██║████╗  ██║██╔════╝
+██║ █╗ ██║██║   ██║██████╔╝██║     ██║     ██║██╔██╗ ██║█████╗
+██║███╗██║██║   ██║██╔══██╗██║     ██║     ██║██║╚██╗██║██╔══╝
+╚███╔███╔╝╚██████╔╝██║  ██║╚██████╗███████╗██║██║ ╚████║███████╗
+ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝╚═╝  ╚═══╝╚══════╝ ●</pre>
+
+        <div class="hero-grid">
           <div class="hero-copy">
-            <p class="signal-label"><span>●</span> Пробный запуск · набор открыт</p>
-            <h1 id="hero-title">Не ищите<br />работу<br /><em>весь день.</em></h1>
-            <p class="hero-lead">worcline. проверяет новые вакансии по вашим условиям и присылает короткую подборку. Решение, куда откликаться, остаётся за вами.</p>
+            <p class="command"><span class="prompt">$</span> worcline search --background</p>
+            <h1 id="hero-title">Поиск работы,<br /><span>который не требует</span><br />вашего дня.</h1>
+            <p class="hero-lead"><span class="comment">#</span> Один раз задайте направление. Получайте короткую подборку подходящих вакансий и решайте, куда откликаться.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#request">Запустить поиск <span aria-hidden="true">↗</span></a>
-              <a class="text-link" href="#how">Посмотреть принцип <span aria-hidden="true">↓</span></a>
+              <a class="cli-button" href="#request"><span>&gt;</span> запустить пробную неделю</a>
+              <a class="quiet-command" href="#how">cat how_it_works.txt <span>↵</span></a>
             </div>
           </div>
 
-          <div class="signal-desk" aria-label="Пример готовой подборки вакансий">
-            <div class="desk-orbit desk-orbit-one" aria-hidden="true"></div>
-            <div class="desk-orbit desk-orbit-two" aria-hidden="true"></div>
-            <div class="desk-topline">
-              <span>WORCLINE / DAILY SIGNAL</span>
-              <span>05.09 · 09:30</span>
+          <div class="boot-log" aria-label="Как сервис обрабатывает вакансии">
+            <div class="panel-caption"><span>process.log</span><span>● live</span></div>
+            <div class="log-body">
+              <p class="boot-line"><span class="dim">[09:30:01]</span> <span class="cyan">INFO</span> Получено вакансий: <strong>47</strong></p>
+              <p class="boot-line"><span class="dim">[09:30:02]</span> <span class="purple">SCAN</span> Проверяю роль и опыт...</p>
+              <p class="boot-line"><span class="dim">[09:30:03]</span> <span class="purple">SCAN</span> Проверяю город и формат...</p>
+              <p class="boot-line"><span class="dim">[09:30:04]</span> <span class="purple">SCAN</span> Проверяю зарплату...</p>
+              <p class="boot-line"><span class="dim">[09:30:05]</span> <span class="warning">SKIP</span> Не подошли: <strong>44</strong></p>
+              <p class="boot-line"><span class="dim">[09:30:06]</span> <span class="success">DONE</span> В подборке: <strong>3</strong></p>
+              <div class="progress-line" aria-hidden="true"><span></span></div>
+              <p class="log-result"><span class="success">✓</span> Подборка и сопроводительные готовы.</p>
             </div>
-            <div class="desk-heading">
-              <p>Подборка готова</p>
-              <strong><span>03</span><small>/47</small></strong>
-            </div>
-            <div class="desk-search">
-              <span>Запрос</span>
-              <strong>Продуктовый дизайнер</strong>
-              <p>Москва · удалённо · от 160 000 ₽</p>
-            </div>
-            <div class="desk-list">
-              <article>
-                <span class="match">96%</span>
-                <div><small>лучшее совпадение</small><h2>Продуктовый дизайнер</h2><p>Финтех · удалённо</p></div>
-                <strong>180–230К</strong>
-              </article>
-              <article>
-                <span class="match">91%</span>
-                <div><small>подходит</small><h2>UX/UI дизайнер</h2><p>EdTech · гибрид</p></div>
-                <strong>от 170К</strong>
-              </article>
-              <article>
-                <span class="match">87%</span>
-                <div><small>подходит</small><h2>Web-дизайнер</h2><p>IT-продукт · удалённо</p></div>
-                <strong>150–190К</strong>
-              </article>
-            </div>
-            <div class="desk-footer"><span><i>✓</i> Сопроводительные готовы</span><span>Вы выбираете</span></div>
-            <div class="scan-beam" aria-hidden="true"></div>
           </div>
         </div>
-        <div class="hero-index" aria-hidden="true"><span>ПОИСК</span><span>ФИЛЬТР</span><span>ВЫБОР</span></div>
       </section>
 
-      <section class="compression" aria-labelledby="compression-title">
-        <div class="compression-intro page-shell">
-          <p class="section-kicker">Смысл сервиса</p>
-          <h2 id="compression-title">Рынок говорит громко.<br /><span>worcline. оставляет важное.</span></h2>
-        </div>
-        <div class="compression-stage page-shell" aria-label="Из 47 новых вакансий 3 подходят пользователю">
-          <div class="number-block number-noise"><span>47</span><p>новых вакансий<br />по вашему запросу</p></div>
-          <div class="compression-track" aria-hidden="true">
-            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <section class="output-section page-shell" aria-labelledby="output-title">
+        <div class="section-command"><span class="prompt">$</span> worcline results --today <span class="dim"># вместо общей ленты</span></div>
+        <div class="output-grid">
+          <div class="output-copy">
+            <p class="path">~/worcline/results</p>
+            <h2 id="output-title"><span>47 входящих.</span><br />3 достойных внимания.</h2>
+            <p>Каждая вакансия проходит через ваши условия. Лишнее остаётся в логе, подходящее — перед вами.</p>
+            <pre class="signal-art" aria-hidden="true"> incoming                  ready
+  47  ────────────────╮      03
+                      │      │
+  ████████████████████╞══════╡███
+                      │      │
+  noise ──────────────╯      match</pre>
           </div>
-          <div class="number-block number-signal"><span>03</span><p>стоят вашего<br />внимания сегодня</p></div>
-        </div>
-        <div class="criteria page-shell">
-          <span>Роль и опыт</span><span>Город и формат</span><span>Зарплата</span><span>Ваше резюме</span>
-        </div>
-      </section>
 
-      <section class="process" id="how" aria-labelledby="process-title">
-        <div class="process-head page-shell">
-          <p class="section-kicker">Как это работает</p>
-          <h2 id="process-title">Один разговор.<br />Дальше — <span>по делу.</span></h2>
-          <p>Без кабинета, сложной настройки и бесконечных уведомлений.</p>
-        </div>
-        <ol class="process-steps page-shell">
-          <li><span class="step-time">ОДИН РАЗ</span><h3>Рассказываете, что ищете</h3><p>Пришлите резюме и назовите роль, город, формат и желаемую зарплату.</p><i aria-hidden="true">01</i></li>
-          <li><span class="step-time">КАЖДЫЙ ДЕНЬ</span><h3>Получаете короткий список</h3><p>В подборку попадают только вакансии, которые совпали с вашими условиями.</p><i aria-hidden="true">02</i></li>
-          <li><span class="step-time">КОГДА УДОБНО</span><h3>Выбираете, куда откликнуться</h3><p>К каждой вакансии уже готово сопроводительное. Никаких откликов без вас.</p><i aria-hidden="true">03</i></li>
-        </ol>
-      </section>
-
-      <section class="audience" id="for-whom" aria-labelledby="audience-title">
-        <div class="audience-head page-shell">
-          <p class="section-kicker">Три ситуации</p>
-          <h2 id="audience-title">Поиск не должен<br />становиться второй работой.</h2>
-        </div>
-        <div class="audience-list page-shell">
-          <a href="#request"><span>A</span><div><h3>После увольнения</h3><p>Вернуться в поиск без паники и хаотичных откликов.</p></div><i aria-hidden="true">↘</i></a>
-          <a href="#request"><span>B</span><div><h3>При смене работы</h3><p>Следить за рынком, не отвлекаясь от текущей работы.</p></div><i aria-hidden="true">↘</i></a>
-          <a href="#request"><span>C</span><div><h3>Для студента</h3><p>Отделить стартовые роли от вакансий с лишними требованиями.</p></div><i aria-hidden="true">↘</i></a>
-        </div>
-      </section>
-
-      <section class="offer" id="price" aria-labelledby="offer-title">
-        <div class="offer-inner page-shell">
-          <div class="offer-copy">
-            <p class="section-kicker">Пробный запуск</p>
-            <h2 id="offer-title">7 дней.<br /><span>1 490 ₽.</span></h2>
-            <p>Неделя, чтобы понять, насколько спокойнее искать работу с готовой подборкой.</p>
+          <div class="vacancy-output" aria-label="Пример готовой подборки">
+            <div class="panel-caption"><span>results.jsonl</span><span>3 matches</span></div>
+            <article class="vacancy-row vacancy-row--best">
+              <span class="vacancy-index">01</span>
+              <div><p><span class="success">96%</span> · лучшее совпадение</p><h3>Продуктовый дизайнер</h3><small>финтех / удалённо / 180–230К</small></div>
+              <span class="row-status">[open]</span>
+            </article>
+            <article class="vacancy-row">
+              <span class="vacancy-index">02</span>
+              <div><p><span class="cyan">91%</span> · подходит</p><h3>UX/UI дизайнер</h3><small>EdTech / гибрид / от 170К</small></div>
+              <span class="row-status">[open]</span>
+            </article>
+            <article class="vacancy-row">
+              <span class="vacancy-index">03</span>
+              <div><p><span class="cyan">87%</span> · подходит</p><h3>Web-дизайнер</h3><small>IT-продукт / удалённо / 150–190К</small></div>
+              <span class="row-status">[open]</span>
+            </article>
+            <div class="output-note"><span class="comment">//</span> Отклики не отправляются без вашего решения.</div>
           </div>
-          <ul>
-            <li><span>01</span> Настройка по резюме и целям</li>
-            <li><span>02</span> 10–15 вариантов в день</li>
-            <li><span>03</span> Сопроводительные письма</li>
-            <li><span>04</span> Без подписки и автопродления</li>
-          </ul>
-          <a class="button button-light" href="#request">Попробовать 7 дней <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
-      <section class="request" id="request" aria-labelledby="request-title">
-        <div class="request-inner page-shell">
+      <section class="how-section" id="how" aria-labelledby="how-title">
+        <div class="page-shell">
+          <div class="section-command"><span class="prompt">$</span> cat workflow.md</div>
+          <div class="how-head">
+            <h2 id="how-title">Три команды.<br /><span>Ноль суеты.</span></h2>
+            <p><span class="comment">#</span> Вы управляете направлением и финальным выбором. Повторяющуюся работу забирает worcline.</p>
+          </div>
+          <ol class="command-list">
+            <li>
+              <span class="line-no">01</span>
+              <div><p class="command-name"><span class="prompt">$</span> worcline configure</p><h3>Один раз рассказываете, что ищете</h3><p>Резюме, роль, город, формат работы и желаемая зарплата.</p></div>
+              <span class="state success">[saved]</span>
+            </li>
+            <li>
+              <span class="line-no">02</span>
+              <div><p class="command-name"><span class="prompt">$</span> worcline watch --daily</p><h3>Каждый день получаете совпадения</h3><p>Короткий список вместо бесконечной ленты случайных вакансий.</p></div>
+              <span class="state cyan">[running]</span>
+            </li>
+            <li>
+              <span class="line-no">03</span>
+              <div><p class="command-name"><span class="prompt">$</span> worcline choose</p><h3>Открываете то, что подходит</h3><p>Сопроводительное уже готово. Решение об отклике остаётся вашим.</p></div>
+              <span class="state warning">[your call]</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="audience-section page-shell" id="for-whom" aria-labelledby="audience-title">
+        <div class="section-command"><span class="prompt">$</span> worcline select-scenario</div>
+        <div class="audience-head">
+          <h2 id="audience-title">Кому пригодится<span class="cursor" aria-hidden="true">_</span></h2>
+          <p>Выберите строку — каждая ведёт к одной короткой форме.</p>
+        </div>
+        <div class="scenario-menu" role="list">
+          <a href="#request" role="listitem"><span class="hotkey">[A]</span><div><h3>После увольнения</h3><p>Вернуться в поиск без паники и хаотичных откликов.</p></div><span class="enter">ENTER ↵</span></a>
+          <a href="#request" role="listitem"><span class="hotkey">[B]</span><div><h3>При смене работы</h3><p>Следить за рынком, не отвлекаясь от текущей работы.</p></div><span class="enter">ENTER ↵</span></a>
+          <a href="#request" role="listitem"><span class="hotkey">[C]</span><div><h3>Для студента</h3><p>Находить стажировки и стартовые роли без лишних требований.</p></div><span class="enter">ENTER ↵</span></a>
+        </div>
+      </section>
+
+      <section class="price-section" id="price" aria-labelledby="price-title">
+        <div class="page-shell price-shell">
+          <div class="section-command"><span class="prompt">$</span> worcline plan --pilot</div>
+          <div class="price-grid">
+            <div>
+              <p class="path">PACKAGE / PILOT_7D</p>
+              <h2 id="price-title">7 дней<br /><span>1 490 ₽</span></h2>
+              <p class="price-note">Без подписки. Без автопродления.</p>
+            </div>
+            <div class="manifest">
+              <p><span class="success">+</span> настройка по резюме и целям</p>
+              <p><span class="success">+</span> 10–15 вариантов в день</p>
+              <p><span class="success">+</span> сопроводительные письма</p>
+              <p><span class="success">+</span> связь в Telegram</p>
+              <p class="manifest-result"><span class="dim">4 items</span> · <span class="success">ready to install</span></p>
+            </div>
+          </div>
+          <a class="cli-button cli-button--wide" href="#request"><span>&gt;</span> попробовать 7 дней</a>
+        </div>
+      </section>
+
+      <section class="request-section page-shell" id="request" aria-labelledby="request-title">
+        <div class="request-ascii" aria-hidden="true"><pre>      ╭──────────╮
+──────┤ CONTACT  ├──────
+      ╰────┬─────╯
+           │
+           ▼</pre></div>
+        <div class="request-grid">
           <div class="request-copy">
-            <p class="section-kicker">Первый шаг</p>
+            <p class="section-command"><span class="prompt">$</span> worcline apply</p>
             <h2 id="request-title">Оставьте контакт.<br /><span>Первым напишу я.</span></h2>
-            <p>Уточню, какую работу вы ищете, и расскажу, как пройдёт пробная неделя. Без рассылок.</p>
+            <p><span class="comment">#</span> Уточню, какую работу вы ищете, и расскажу, как пройдёт пробная неделя. Без рассылок.</p>
           </div>
           <form class="request-form" id="request-form" novalidate>
             <div class="form-trap" aria-hidden="true"><label for="website">Сайт</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
-            <label for="contact">Почта или Telegram</label>
+            <label for="contact"><span class="purple">?</span> Почта или Telegram</label>
             <div class="input-row">
+              <span class="input-prompt">&gt;</span>
               <input id="contact" name="contact" type="text" placeholder="you@example.com или @username" autocomplete="email" aria-describedby="form-note form-result" required />
-              <button class="button button-dark" type="submit"><span>Оставить заявку</span><i aria-hidden="true">↗</i></button>
+              <button type="submit">[ отправить ↵ ]</button>
             </div>
-            <p class="form-note" id="form-note">Контакт сохранится в закрытой базе. Посетители сайта его не увидят.</p>
+            <p class="form-note" id="form-note"><span class="dim">//</span> Контакт сохранится в закрытой базе. Посетители сайта его не увидят.</p>
             <p class="form-result" id="form-result" role="status" aria-live="polite"></p>
           </form>
         </div>
@@ -170,9 +195,9 @@
 
     <footer class="site-footer">
       <div class="footer-inner page-shell">
-        <a class="footer-brand" href="#top">worcline.</a>
-        <p>Подходящая работа — без лишнего шума.</p>
-        <p class="developer-credit">Основано на <a href="https://github.com/fikstt2/hh-ai-agent" target="_blank" rel="noreferrer">hh-ai-agent · fikstt2</a></p>
+        <pre aria-hidden="true">[W.]</pre>
+        <p><span class="dim">process exited with code</span> <span class="success">0</span> · worcline.</p>
+        <p class="developer-credit">core: <a href="https://github.com/fikstt2/hh-ai-agent" target="_blank" rel="noreferrer">hh-ai-agent / fikstt2</a></p>
       </div>
     </footer>
   </body>
