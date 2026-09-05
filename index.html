@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260905-2" />
+    <link rel="stylesheet" href="styles.css?v=20260905-3" />
     <script defer src="https://www.gstatic.com/firebasejs/12.18.0/firebase-app-compat.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore-compat.js"></script>
     <script defer src="site-config.js?v=20260904-6"></script>
@@ -43,7 +43,7 @@
 
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="command"><span class="prompt">$</span> worcline search --background</p>
+            <p class="command"><span class="shell-user">visitor@worcline</span><span class="dim">:</span><span class="shell-path">~/search</span><span class="prompt">$</span> worcline --background</p>
             <h1 id="hero-title">Поиск работы,<br /><span>который не требует</span><br />вашего дня.</h1>
             <p class="hero-lead"><span class="comment">#</span> Один раз задайте направление. Получайте короткую подборку подходящих вакансий и решайте, куда откликаться.</p>
             <div class="hero-actions">
@@ -69,7 +69,7 @@
       </section>
 
       <section class="output-section page-shell" aria-labelledby="output-title">
-        <div class="section-command"><span class="prompt">$</span> worcline results --today <span class="dim"># вместо общей ленты</span></div>
+        <div class="section-command"><span class="shell-user">visitor@worcline</span><span class="dim">:</span><span class="shell-path">~/results</span><span class="prompt">$</span>&nbsp;worcline --today <span class="section-comment"># вместо общей ленты</span></div>
         <div class="output-grid">
           <div class="output-copy">
             <p class="path">~/worcline/results</p>
@@ -107,7 +107,7 @@
 
       <section class="how-section" id="how" aria-labelledby="how-title">
         <div class="page-shell">
-          <div class="section-command"><span class="prompt">$</span> cat workflow.md</div>
+          <div class="section-command"><span class="shell-user">visitor@worcline</span><span class="dim">:</span><span class="shell-path">~/how</span><span class="prompt">$</span>&nbsp;cat workflow.md</div>
           <div class="how-head">
             <h2 id="how-title">Три команды.<br /><span>Ноль суеты.</span></h2>
             <p><span class="comment">#</span> Вы управляете направлением и финальным выбором. Повторяющуюся работу забирает worcline.</p>
@@ -133,7 +133,7 @@
       </section>
 
       <section class="audience-section page-shell" id="for-whom" aria-labelledby="audience-title">
-        <div class="section-command"><span class="prompt">$</span> worcline select-scenario</div>
+        <div class="section-command"><span class="shell-user">visitor@worcline</span><span class="dim">:</span><span class="shell-path">~/scenario</span><span class="prompt">$</span>&nbsp;worcline select</div>
         <div class="audience-head">
           <h2 id="audience-title">Кому пригодится<span class="cursor" aria-hidden="true">_</span></h2>
           <p>Выберите строку — каждая ведёт к одной короткой форме.</p>
@@ -147,7 +147,7 @@
 
       <section class="price-section" id="price" aria-labelledby="price-title">
         <div class="page-shell price-shell">
-          <div class="section-command"><span class="prompt">$</span> worcline plan --pilot</div>
+          <div class="section-command"><span class="shell-user">visitor@worcline</span><span class="dim">:</span><span class="shell-path">~/plan</span><span class="prompt">$</span>&nbsp;worcline --pilot</div>
           <div class="price-grid">
             <div>
               <p class="path">PACKAGE / PILOT_7D</p>
@@ -167,14 +167,16 @@
       </section>
 
       <section class="request-section page-shell" id="request" aria-labelledby="request-title">
-        <div class="request-ascii" aria-hidden="true"><pre>      ╭──────────╮
-──────┤ CONTACT  ├──────
-      ╰────┬─────╯
-           │
-           ▼</pre></div>
+        <div class="request-ascii" aria-hidden="true"><pre><span class="success">visitor@worcline</span><span class="dim">:</span><span class="cyan">~/apply</span><span class="prompt">$</span> request-contact
+
+<span class="ascii-bright">+--------------------[ CONTACT ]--------------------+</span>
+|  stdin  <span class="prompt">-&gt;</span>  validate  <span class="purple">-&gt;</span>  secure_store  <span class="success">-&gt;</span>  owner  |
+<span class="ascii-bright">+-------------------------+-------------------------+</span>
+                          |
+                          <span class="prompt">v</span></pre></div>
         <div class="request-grid">
           <div class="request-copy">
-            <p class="section-command"><span class="prompt">$</span> worcline apply</p>
+            <p class="section-command"><span class="shell-user">visitor@worcline</span><span class="dim">:</span><span class="shell-path">~/apply</span><span class="prompt">$</span>&nbsp;worcline start</p>
             <h2 id="request-title">Оставьте контакт.<br /><span>Первым напишу я.</span></h2>
             <p><span class="comment">#</span> Уточню, какую работу вы ищете, и расскажу, как пройдёт пробная неделя. Без рассылок.</p>
           </div>
